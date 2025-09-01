@@ -83,12 +83,31 @@
         
         body {
             position: relative;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        /* Ensure all containers don't cause horizontal overflow */
+        .max-w-7xl {
+            max-width: 80rem; /* 1280px */
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        /* Make sure images don't cause overflow */
+        img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="font-sans antialiased bg-background text-foreground">
+<body class="font-sans antialiased bg-background text-foreground overflow-x-hidden">
     
     <!-- Navigation Header -->
     <!-- @COMPONENT: NavigationHeader -->
@@ -136,6 +155,9 @@
 
     <!-- Add padding to account for fixed header on mobile -->
     <div class="h-16 md:h-0"></div>
+    
+    <!-- Main content wrapper to prevent horizontal overflow -->
+    <div class="w-full overflow-x-hidden">
     
     <!-- Hero Section -->
     <!-- @COMPONENT: HeroSection -->
@@ -869,6 +891,7 @@
         </div>
     </footer>
     <!-- @END_COMPONENT: Footer -->
+    </div> <!-- End of main content wrapper -->
 
     <script>
         // Mobile menu toggle functionality
