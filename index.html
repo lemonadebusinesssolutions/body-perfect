@@ -94,9 +94,23 @@
                     </button>
                 </div>
                 <div class="md:hidden">
-                    <button class="text-foreground p-2">
-                        <i class="fas fa-bars"></i>
+                    <button id="mobile-menu-button" class="text-foreground p-2 focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
+                        <i class="fas fa-bars text-xl"></i>
                     </button>
+                </div>
+                <!-- Mobile menu, show/hide based on menu state -->
+                <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 right-0 bg-background shadow-lg z-40">
+                    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                        <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-muted/50">About</a>
+                        <a href="#benefits" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-muted/50">Benefits</a>
+                        <a href="#resources" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-muted/50">Resources</a>
+                        <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-muted/50">Contact</a>
+                        <div class="pt-2">
+                            <button class="w-full bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors duration-200">
+                                Healthcare Login
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -839,59 +853,47 @@
     <script>
         // Mobile menu toggle functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const menuButton = document.querySelector('.md\:hidden button');
-            const navMenu = document.querySelector('.md\:hidden + .md\:flex');
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = menuButton?.querySelector('i');
             
-            if (menuButton) {
+            if (menuButton && mobileMenu && menuIcon) {
                 menuButton.addEventListener('click', function() {
-                    const icon = this.querySelector('i');
                     const isExpanded = this.getAttribute('aria-expanded') === 'true' || false;
                     
                     // Toggle menu visibility
-                    if (navMenu) {
-                        navMenu.classList.toggle('hidden');
-                        navMenu.classList.toggle('block');
-                        navMenu.classList.toggle('absolute');
-                        navMenu.classList.toggle('top-16');
-                        navMenu.classList.toggle('left-0');
-                        navMenu.classList.toggle('right-0');
-                        navMenu.classList.toggle('bg-background');
-                        navMenu.classList.toggle('shadow-lg');
-                        navMenu.classList.toggle('p-4');
-                        navMenu.classList.toggle('space-y-4');
-                        navMenu.classList.toggle('flex-col');
-                    }
+                    mobileMenu.classList.toggle('hidden');
                     
                     // Toggle icon between bars and times
-                    if (icon) {
-                        icon.classList.toggle('fa-bars');
-                        icon.classList.toggle('fa-times');
-                    }
+                    menuIcon.classList.toggle('fa-bars');
+                    menuIcon.classList.toggle('fa-times');
                     
                     // Update aria-expanded attribute
                     this.setAttribute('aria-expanded', !isExpanded);
                 });
-            }
-            
-            // Close menu when clicking on a nav link
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    const menuButton = document.querySelector('.md\:hidden button');
-                    const navMenu = document.querySelector('.md\:hidden + .md\:flex');
-                    const icon = menuButton?.querySelector('i');
-                    
-                    if (navMenu && !navMenu.classList.contains('hidden')) {
-                        navMenu.classList.add('hidden');
-                        navMenu.classList.remove('block');
-                        if (icon) {
-                            icon.classList.remove('fa-times');
-                            icon.classList.add('fa-bars');
-                        }
-                        menuButton?.setAttribute('aria-expanded', 'false');
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    const isClickInside = menuButton.contains(event.target) || mobileMenu.contains(event.target);
+                    if (!isClickInside && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.classList.remove('fa-times');
+                        menuIcon.classList.add('fa-bars');
+                        menuButton.setAttribute('aria-expanded', 'false');
                     }
                 });
-            });
+                
+                // Close menu when clicking on a nav link
+                const navLinks = mobileMenu.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.classList.remove('fa-times');
+                        menuIcon.classList.add('fa-bars');
+                        menuButton.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
             
             // Simple FAQ accordion functionality
             const faqButtons = document.querySelectorAll('[data-mock="true"] button');
