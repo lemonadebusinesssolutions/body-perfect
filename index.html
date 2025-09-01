@@ -1,0 +1,881 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mounjaro - Professional Healthcare Information Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                borderRadius: {
+                    lg: "var(--radius)",
+                    md: "calc(var(--radius) - 2px)",
+                    sm: "calc(var(--radius) - 4px)",
+                },
+                colors: {
+                    background: "var(--background)",
+                    foreground: "var(--foreground)",
+                    card: {
+                        DEFAULT: "var(--card)",
+                        foreground: "var(--card-foreground)",
+                    },
+                    primary: {
+                        DEFAULT: "var(--primary)",
+                        foreground: "var(--primary-foreground)",
+                    },
+                    secondary: {
+                        DEFAULT: "var(--secondary)",
+                        foreground: "var(--secondary-foreground)",
+                    },
+                    muted: {
+                        DEFAULT: "var(--muted)",
+                        foreground: "var(--muted-foreground)",
+                    },
+                    accent: {
+                        DEFAULT: "var(--accent)",
+                        foreground: "var(--accent-foreground)",
+                    },
+                    border: "var(--border)",
+                    input: "var(--input)",
+                    ring: "var(--ring)",
+                }
+            }
+        }
+    };
+    </script>
+    <style>
+        :root {
+            --background: hsl(0 0% 100%);
+            --foreground: hsl(222 84% 5%);
+            --card: hsl(0 0% 100%);
+            --card-foreground: hsl(222 84% 5%);
+            --primary: hsl(213 94% 42%);
+            --primary-foreground: hsl(0 0% 98%);
+            --secondary: hsl(196 94% 39%);
+            --secondary-foreground: hsl(0 0% 98%);
+            --muted: hsl(210 40% 96%);
+            --muted-foreground: hsl(215 16% 47%);
+            --accent: hsl(160 84% 39%);
+            --accent-foreground: hsl(0 0% 98%);
+            --border: hsl(214 32% 91%);
+            --input: hsl(214 32% 91%);
+            --ring: hsl(213 94% 42%);
+            --radius: 0.75rem;
+        }
+        
+        .font-sans {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="font-sans antialiased bg-background text-foreground">
+    
+    <!-- Navigation Header -->
+    <!-- @COMPONENT: NavigationHeader -->
+    <nav class="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-primary">Mounjaro</h1>
+                        <p class="text-xs text-muted-foreground">Professional Healthcare Portal</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-foreground hover:text-primary transition-colors duration-200">About</a>
+                    <a href="#benefits" class="text-foreground hover:text-primary transition-colors duration-200">Benefits</a>
+                    <a href="#resources" class="text-foreground hover:text-primary transition-colors duration-200">Resources</a>
+                    <a href="#contact" class="text-foreground hover:text-primary transition-colors duration-200">Contact</a>
+                    <button class="bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors duration-200">
+                        Healthcare Login
+                    </button>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-foreground p-2">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: NavigationHeader -->
+
+    <!-- Hero Section -->
+    <!-- @COMPONENT: HeroSection -->
+    <section class="relative py-20 lg:py-32 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+                            Professional Healthcare Information for
+                            <span class="text-primary">Mounjaro</span>
+                        </h1>
+                        <p class="text-lg text-muted-foreground leading-relaxed">
+                            Comprehensive educational resources about tirzepatide, the first FDA-approved dual GIP and GLP-1 receptor agonist for type 2 diabetes management.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-primary text-primary-foreground px-8 py-4 rounded-lg hover:bg-primary/90 transition-all duration-200 transform hover:scale-105 font-semibold">
+                            <i class="fas fa-user-md mr-2"></i>
+                            Healthcare Provider Access
+                        </button>
+                        <button class="border border-border text-foreground px-8 py-4 rounded-lg hover:bg-muted transition-colors duration-200 font-semibold">
+                            <i class="fas fa-download mr-2"></i>
+                            Download Resources
+                        </button>
+                    </div>
+
+                    <div class="bg-card border border-border rounded-lg p-6 shadow-sm">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-3 h-3 bg-accent rounded-full"></div>
+                            <h3 class="font-semibold text-foreground">FDA Approved</h3>
+                        </div>
+                        <p class="text-sm text-muted-foreground">
+                            Mounjaro is FDA-approved as an adjunct to diet and exercise to improve blood sugar control in adults with type 2 diabetes mellitus.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Medical professional in consultation setting -->
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Healthcare professional consulting with patient" 
+                         class="rounded-2xl shadow-2xl w-full h-auto" />
+                    <div class="absolute -bottom-6 -left-6 bg-card border border-border rounded-xl p-4 shadow-lg">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-heart text-accent"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-sm">75-90% Success Rate</p>
+                                <p class="text-xs text-muted-foreground">A1C target achievement</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- About Mounjaro Section -->
+    <!-- @COMPONENT: AboutSection -->
+    <section id="about" class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Understanding Mounjaro (Tirzepatide)
+                </h2>
+                <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+                    The first and only FDA-approved dual GIP and GLP-1 receptor agonist, designed to help adults with type 2 diabetes achieve better blood sugar control.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-foreground">How Mounjaro Works</h3>
+                    <p class="text-muted-foreground leading-relaxed">
+                        Mounjaro works by activating two gut hormone receptors, GIP and GLP-1, to manage blood sugar through multiple mechanisms that work together for comprehensive diabetes management.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mt-1">
+                                <i class="fas fa-check text-primary text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-foreground">Stimulates insulin release</h4>
+                                <p class="text-sm text-muted-foreground">When glucose levels are high</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mt-1">
+                                <i class="fas fa-check text-primary text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-foreground">Reduces liver glucagon production</h4>
+                                <p class="text-sm text-muted-foreground">Helping control glucose output</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mt-1">
+                                <i class="fas fa-check text-primary text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-foreground">Slows stomach emptying</h4>
+                                <p class="text-sm text-muted-foreground">Controls post-meal sugar spikes</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mt-1">
+                                <i class="fas fa-check text-primary text-xs"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-foreground">Increases fullness</h4>
+                                <p class="text-sm text-muted-foreground">Reduces appetite and food intake</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Healthcare technology and medical equipment -->
+                    <img src="https://pixabay.com/get/ge5724ae3d3663f1339a662bd8b791be7aad47f19ba0b2fc164a8ff2d7515efd8032361d36a6dfcde2e879f3440173d6e70845a2c4c3901cb3b5d7476461dd08c_1280.jpg" 
+                         alt="Modern healthcare technology and medical monitoring equipment" 
+                         class="rounded-xl shadow-lg w-full h-auto" />
+                </div>
+            </div>
+
+            <!-- Dosing Information -->
+            <div class="bg-muted/30 rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-foreground mb-6 text-center">Administration & Dosing</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-syringe text-primary text-xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-foreground mb-2">Injectable Medication</h4>
+                        <p class="text-sm text-muted-foreground">Prefilled pen, injected once weekly under the skin</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-calendar-alt text-secondary text-xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-foreground mb-2">Weekly Dosing</h4>
+                        <p class="text-sm text-muted-foreground">Convenient once-weekly administration schedule</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-pills text-accent text-xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-foreground mb-2">Six Available Doses</h4>
+                        <p class="text-sm text-muted-foreground">2.5mg, 5mg, 7.5mg, 10mg, 12.5mg, 15mg</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AboutSection -->
+
+    <!-- Benefits Section -->
+    <!-- @COMPONENT: BenefitsSection -->
+    <section id="benefits" class="py-20 bg-muted/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Clinical Benefits & Outcomes
+                </h2>
+                <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+                    Evidence-based results from clinical studies demonstrate Mounjaro's effectiveness in blood sugar control and weight management.
+                </p>
+            </div>
+
+            <!-- Clinical Results Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                            <i class="fas fa-chart-line text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-foreground">A1C Reduction</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="text-3xl font-bold text-primary">75-90%</div>
+                        <p class="text-sm text-muted-foreground">of people reached A1C target of less than 7%</p>
+                        <div class="text-xs text-muted-foreground">
+                            Average starting A1C: 7.9% to 8.6%
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center">
+                            <i class="fas fa-weight text-accent text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-foreground">Weight Loss</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="text-3xl font-bold text-accent">12-25 lbs</div>
+                        <p class="text-sm text-muted-foreground">Average weight loss across dose ranges</p>
+                        <div class="text-xs text-muted-foreground">
+                            5mg dose: 12 lbs | 15mg dose: 25 lbs
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
+                            <i class="fas fa-clock text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-foreground">Timeline</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="text-3xl font-bold text-secondary">8-12</div>
+                        <p class="text-sm text-muted-foreground">weeks to reach A1C targets</p>
+                        <div class="text-xs text-muted-foreground">
+                            8 weeks: ≤7% | 12 weeks: ≤6.5%
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Section -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-foreground">Superior Efficacy</h3>
+                    <p class="text-muted-foreground leading-relaxed">
+                        According to FDA regulators, patients taking the maximum recommended dose of Mounjaro lost 12 pounds more on average than those who used semaglutide, demonstrating superior weight management outcomes.
+                    </p>
+                    
+                    <div class="bg-card border border-border rounded-lg p-6">
+                        <h4 class="font-semibold text-foreground mb-3">Recent 2025 FDA Approval</h4>
+                        <p class="text-sm text-muted-foreground">
+                            The FDA recently approved tirzepatide for treatment of obstructive sleep apnea, representing an expanded use beyond diabetes management.
+                        </p>
+                    </div>
+
+                    <div class="bg-card border border-border rounded-lg p-6">
+                        <h4 class="font-semibold text-foreground mb-3">Combination Therapy</h4>
+                        <p class="text-sm text-muted-foreground">
+                            May be used alone or in combination with other FDA-approved diabetes medications such as metformin, sulfonylureas, SGLT2 inhibitors, and insulin.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Healthcare professional discussing treatment with patient -->
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Healthcare professional discussing diabetes treatment options with patient" 
+                         class="rounded-xl shadow-lg w-full h-auto" />
+                    
+                    <div class="absolute -top-4 -right-4 bg-card border border-border rounded-xl p-4 shadow-lg">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-primary">Dual Action</div>
+                            <div class="text-xs text-muted-foreground">GIP + GLP-1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: BenefitsSection -->
+
+    <!-- Healthcare Resources Section -->
+    <!-- @COMPONENT: ResourcesSection -->
+    <section id="resources" class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Healthcare Provider Resources
+                </h2>
+                <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+                    Comprehensive educational materials and patient support resources for healthcare professionals.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Resource Cards -->
+                <div class="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer group">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-200">
+                            <i class="fas fa-file-medical text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-foreground">Clinical Guidelines</h3>
+                    </div>
+                    <p class="text-sm text-muted-foreground mb-4">
+                        Comprehensive prescribing information, dosing guidelines, and clinical protocols for optimal patient care.
+                    </p>
+                    <button class="text-primary text-sm font-semibold hover:underline">
+                        Download PDF <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <div class="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer group">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center group-hover:bg-secondary/20 transition-colors duration-200">
+                            <i class="fas fa-users text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-foreground">Patient Materials</h3>
+                    </div>
+                    <p class="text-sm text-muted-foreground mb-4">
+                        Educational brochures, injection guides, and lifestyle resources to support patient understanding and adherence.
+                    </p>
+                    <button class="text-secondary text-sm font-semibold hover:underline">
+                        View Materials <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <div class="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer group">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-200">
+                            <i class="fas fa-chart-bar text-accent text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-foreground">Clinical Data</h3>
+                    </div>
+                    <p class="text-sm text-muted-foreground mb-4">
+                        Latest clinical trial results, real-world evidence, and comparative effectiveness data for informed decisions.
+                    </p>
+                    <button class="text-accent text-sm font-semibold hover:underline">
+                        Access Data <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <div class="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer group">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-200">
+                            <i class="fas fa-graduation-cap text-primary text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-foreground">Training Modules</h3>
+                    </div>
+                    <p class="text-sm text-muted-foreground mb-4">
+                        Interactive training programs and continuing education modules for healthcare professionals.
+                    </p>
+                    <button class="text-primary text-sm font-semibold hover:underline">
+                        Start Training <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <div class="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer group">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center group-hover:bg-secondary/20 transition-colors duration-200">
+                            <i class="fas fa-headset text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-foreground">Support Services</h3>
+                    </div>
+                    <p class="text-sm text-muted-foreground mb-4">
+                        24/7 healthcare professional support line and patient assistance program information.
+                    </p>
+                    <button class="text-secondary text-sm font-semibold hover:underline">
+                        Contact Support <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <div class="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer group">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-200">
+                            <i class="fas fa-mobile-alt text-accent text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-foreground">Digital Tools</h3>
+                    </div>
+                    <p class="text-sm text-muted-foreground mb-4">
+                        Mobile apps and digital resources for patient monitoring and healthcare provider tools.
+                    </p>
+                    <button class="text-accent text-sm font-semibold hover:underline">
+                        Explore Tools <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Patient Support Section -->
+            <div class="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-bold text-foreground">Patient Support Programs</h3>
+                        <p class="text-muted-foreground leading-relaxed">
+                            Comprehensive support programs designed to help patients succeed with their Mounjaro therapy, including financial assistance and educational resources.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-accent"></i>
+                                <span class="text-foreground">Financial assistance programs</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-accent"></i>
+                                <span class="text-foreground">Injection training and support</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-accent"></i>
+                                <span class="text-foreground">Lifestyle counseling resources</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-accent"></i>
+                                <span class="text-foreground">24/7 patient support hotline</span>
+                            </div>
+                        </div>
+                        
+                        <button class="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200">
+                            Access Patient Support
+                        </button>
+                    </div>
+                    
+                    <div class="relative">
+                        <!-- Diabetes care and patient consultation -->
+                        <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                             alt="Diabetes care consultation with healthcare professional" 
+                             class="rounded-xl shadow-lg w-full h-auto" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ResourcesSection -->
+
+    <!-- FAQ Section -->
+    <!-- @COMPONENT: FAQSection -->
+    <section class="py-20 bg-muted/20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-lg text-muted-foreground">
+                    Common questions about Mounjaro from healthcare professionals and patients.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-card border border-border rounded-lg shadow-sm" data-mock="true">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-muted/50 transition-colors duration-200">
+                        <span class="font-semibold text-foreground">What makes Mounjaro different from other diabetes medications?</span>
+                        <i class="fas fa-chevron-down text-muted-foreground"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-muted-foreground">
+                        <p>Mounjaro is the first and only FDA-approved dual GIP and GLP-1 receptor agonist. This dual-action mechanism provides superior efficacy in both blood sugar control and weight management compared to single-receptor medications.</p>
+                    </div>
+                </div>
+
+                <div class="bg-card border border-border rounded-lg shadow-sm" data-mock="true">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-muted/50 transition-colors duration-200">
+                        <span class="font-semibold text-foreground">How long does it take to see results with Mounjaro?</span>
+                        <i class="fas fa-chevron-down text-muted-foreground"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-muted-foreground hidden">
+                        <p>Studies show that it can take 8 weeks to reach an A1C target of ≤7% and 12 weeks to reach an A1C ≤6.5%. Significant weight loss can occur as early as 28 weeks of treatment.</p>
+                    </div>
+                </div>
+
+                <div class="bg-card border border-border rounded-lg shadow-sm" data-mock="true">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-muted/50 transition-colors duration-200">
+                        <span class="font-semibold text-foreground">What are the most common side effects?</span>
+                        <i class="fas fa-chevron-down text-muted-foreground"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-muted-foreground hidden">
+                        <p>The most common side effects include nausea, diarrhea, decreased appetite, vomiting, constipation, indigestion, and stomach pain. Most side effects are mild to moderate and tend to decrease over time.</p>
+                    </div>
+                </div>
+
+                <div class="bg-card border border-border rounded-lg shadow-sm" data-mock="true">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-muted/50 transition-colors duration-200">
+                        <span class="font-semibold text-foreground">Can Mounjaro be used with other diabetes medications?</span>
+                        <i class="fas fa-chevron-down text-muted-foreground"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-muted-foreground hidden">
+                        <p>Yes, Mounjaro may be used alone or in combination with other FDA-approved diabetes medications such as metformin, sulfonylureas, SGLT2 inhibitors, and insulin. Healthcare providers should determine the appropriate combination based on individual patient needs.</p>
+                    </div>
+                </div>
+
+                <div class="bg-card border border-border rounded-lg shadow-sm" data-mock="true">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-muted/50 transition-colors duration-200">
+                        <span class="font-semibold text-foreground">Is Mounjaro approved for weight loss?</span>
+                        <i class="fas fa-chevron-down text-muted-foreground"></i>
+                    </button>
+                    <div class="px-6 pb-4 text-muted-foreground hidden">
+                        <p>Mounjaro is specifically FDA-approved for type 2 diabetes management, not as a weight loss medication. However, significant weight loss is a common benefit observed in clinical studies as part of comprehensive diabetes care.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: FAQSection -->
+
+    <!-- Contact Section -->
+    <!-- @COMPONENT: ContactSection -->
+    <section id="contact" class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Healthcare Professional Contact
+                </h2>
+                <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+                    Connect with our medical affairs team for clinical questions, educational resources, or healthcare provider support.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-card border border-border rounded-xl p-8 shadow-sm">
+                    <h3 class="text-xl font-bold text-foreground mb-6">Healthcare Inquiry Form</h3>
+                    
+                    <form class="space-y-6" data-mock="true">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">First Name *</label>
+                                <input type="text" class="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring bg-background" required data-bind="firstName">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Last Name *</label>
+                                <input type="text" class="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring bg-background" required data-bind="lastName">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-foreground mb-2">Professional Title *</label>
+                            <select class="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring bg-background" required data-bind="title">
+                                <option value="">Select your role</option>
+                                <option value="physician">Physician</option>
+                                <option value="nurse-practitioner">Nurse Practitioner</option>
+                                <option value="physician-assistant">Physician Assistant</option>
+                                <option value="pharmacist">Pharmacist</option>
+                                <option value="diabetes-educator">Diabetes Educator</option>
+                                <option value="other">Other Healthcare Professional</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-foreground mb-2">Email Address *</label>
+                            <input type="email" class="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring bg-background" required data-bind="email">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-foreground mb-2">Phone Number</label>
+                            <input type="tel" class="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring bg-background" data-bind="phone">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-foreground mb-2">Practice/Institution</label>
+                            <input type="text" class="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring bg-background" data-bind="institution">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-foreground mb-2">Inquiry Type</label>
+                            <select class="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring bg-background" data-bind="inquiryType">
+                                <option value="">Select inquiry type</option>
+                                <option value="clinical-information">Clinical Information</option>
+                                <option value="prescribing-guidance">Prescribing Guidance</option>
+                                <option value="patient-resources">Patient Resources</option>
+                                <option value="educational-materials">Educational Materials</option>
+                                <option value="adverse-event">Adverse Event Reporting</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-foreground mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring bg-background" placeholder="Please provide details about your inquiry..." data-bind="message"></textarea>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <input type="checkbox" id="consent" class="mt-1" required>
+                            <label for="consent" class="text-sm text-muted-foreground">
+                                I consent to being contacted by the medical affairs team regarding my inquiry. I understand this information will be used in accordance with applicable privacy policies. *
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary text-primary-foreground py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200 font-semibold" data-event="click:handleFormSubmit">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div>
+                        <!-- Medical team consultation setup -->
+                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                             alt="Medical team in consultation discussing patient care" 
+                             class="rounded-xl shadow-lg w-full h-auto mb-8" />
+                    </div>
+
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-bold text-foreground">Contact Information</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mt-1">
+                                    <i class="fas fa-phone text-primary text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-foreground">Medical Affairs Hotline</h4>
+                                    <p class="text-muted-foreground">1-800-MOUNJARO (1-800-668-6527)</p>
+                                    <p class="text-sm text-muted-foreground">Monday-Friday, 8 AM - 8 PM EST</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center mt-1">
+                                    <i class="fas fa-envelope text-secondary text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-foreground">Email Support</h4>
+                                    <p class="text-muted-foreground">medinfo@mounjaro.com</p>
+                                    <p class="text-sm text-muted-foreground">Response within 24-48 hours</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center mt-1">
+                                    <i class="fas fa-exclamation-triangle text-accent text-sm"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-foreground">Adverse Event Reporting</h4>
+                                    <p class="text-muted-foreground">1-800-LLY-RX01 (1-800-559-7901)</p>
+                                    <p class="text-sm text-muted-foreground">24/7 reporting available</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-muted/30 rounded-lg p-6">
+                        <h4 class="font-semibold text-foreground mb-3">Emergency Medical Information</h4>
+                        <p class="text-sm text-muted-foreground mb-3">
+                            For urgent medical questions outside business hours, healthcare professionals can access 24/7 medical information services.
+                        </p>
+                        <button class="text-primary text-sm font-semibold hover:underline">
+                            Access Emergency Protocols <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+
+    <!-- Medical Disclaimer -->
+    <!-- @COMPONENT: DisclaimerSection -->
+    <section class="py-12 bg-muted/20 border-t border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-card border border-border rounded-xl p-8">
+                <h3 class="text-lg font-bold text-foreground mb-4">Important Safety Information & Medical Disclaimer</h3>
+                
+                <div class="space-y-4 text-sm text-muted-foreground">
+                    <p class="font-semibold text-foreground">PRESCRIPTION MEDICATION - For Healthcare Professional Use Only</p>
+                    
+                    <p>
+                        <strong>Indication:</strong> Mounjaro (tirzepatide) injection is indicated as an adjunct to diet and exercise to improve blood sugar (glucose) control in adults with type 2 diabetes mellitus.
+                    </p>
+                    
+                    <p>
+                        <strong>Important Safety Information:</strong> Mounjaro is not known if it is safe and effective for use in children under 18 years of age. The most common side effects include nausea, diarrhea, decreased appetite, vomiting, constipation, indigestion, and stomach pain. Serious side effects may include inflammation of the pancreas, low blood sugar, allergic reactions, kidney problems, severe stomach problems, and complications of diabetes-related eye disease.
+                    </p>
+                    
+                    <p>
+                        <strong>Contraindications:</strong> Mounjaro is contraindicated in patients with a personal or family history of medullary thyroid carcinoma or in patients with Multiple Endocrine Neoplasia syndrome type 2.
+                    </p>
+                    
+                    <p>
+                        This information is for educational purposes only and is not intended to replace professional medical advice, diagnosis, or treatment. Healthcare professionals should refer to the full prescribing information before prescribing Mounjaro. Patients should be advised to speak with their healthcare provider about their individual medical condition and treatment options.
+                    </p>
+                    
+                    <p class="text-xs">
+                        For full prescribing information, visit: <a href="#" class="text-primary hover:underline">https://www.accessdata.fda.gov/drugsatfda_docs/label/2022/215866s000lbl.pdf</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: DisclaimerSection -->
+
+    <!-- Footer -->
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-foreground text-background py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold">Mounjaro</h3>
+                    <p class="text-sm text-background/80">
+                        Professional healthcare information portal for tirzepatide education and resources.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-background/60 hover:text-background transition-colors duration-200">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-background/60 hover:text-background transition-colors duration-200">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Healthcare Resources</h4>
+                    <ul class="space-y-2 text-sm text-background/80">
+                        <li><a href="#" class="hover:text-background transition-colors duration-200">Clinical Guidelines</a></li>
+                        <li><a href="#" class="hover:text-background transition-colors duration-200">Prescribing Information</a></li>
+                        <li><a href="#" class="hover:text-background transition-colors duration-200">Patient Materials</a></li>
+                        <li><a href="#" class="hover:text-background transition-colors duration-200">Training Modules</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm text-background/80">
+                        <li><a href="#" class="hover:text-background transition-colors duration-200">Medical Affairs</a></li>
+                        <li><a href="#" class="hover:text-background transition-colors duration-200">Patient Support</a></li>
+                        <li><a href="#" class="hover:text-background transition-colors duration-200">Adverse Event Reporting</a></li>
+                        <li><a href="#" class="hover:text-background transition-colors duration-200">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm text-background/80">
+                        <li><a href="#" class="hover:text-background transition-colors duration-200">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-background transition-colors duration-200">Terms of Use</a></li>
+                        <li><a href="#" class="hover:text-background transition-colors duration-200">Accessibility</a></li>
+                        <li><a href="#" class="hover:text-background transition-colors duration-200">Regulatory Information</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-background/20 mt-8 pt-8 text-center text-sm text-background/60">
+                <p>&copy; 2025 Mounjaro Healthcare Portal. All rights reserved. This site is intended for healthcare professionals only.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // Simple FAQ accordion functionality
+        (function() {
+            const faqButtons = document.querySelectorAll('[data-mock="true"] button');
+            faqButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    content.classList.toggle('hidden');
+                    icon.classList.toggle('fa-chevron-down');
+                    icon.classList.toggle('fa-chevron-up');
+                });
+            });
+
+            // Form submission handler (mock)
+            const form = document.querySelector('form[data-mock="true"]');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement actual form submission to healthcare portal backend
+                    alert('Thank you for your inquiry. A medical affairs representative will contact you within 24-48 hours.');
+                });
+            }
+
+            // Smooth scrolling for navigation links
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
