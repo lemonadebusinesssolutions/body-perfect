@@ -837,8 +837,63 @@
     <!-- @END_COMPONENT: Footer -->
 
     <script>
-        // Simple FAQ accordion functionality
-        (function() {
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector('.md\:hidden button');
+            const navMenu = document.querySelector('.md\:hidden + .md\:flex');
+            
+            if (menuButton) {
+                menuButton.addEventListener('click', function() {
+                    const icon = this.querySelector('i');
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true' || false;
+                    
+                    // Toggle menu visibility
+                    if (navMenu) {
+                        navMenu.classList.toggle('hidden');
+                        navMenu.classList.toggle('block');
+                        navMenu.classList.toggle('absolute');
+                        navMenu.classList.toggle('top-16');
+                        navMenu.classList.toggle('left-0');
+                        navMenu.classList.toggle('right-0');
+                        navMenu.classList.toggle('bg-background');
+                        navMenu.classList.toggle('shadow-lg');
+                        navMenu.classList.toggle('p-4');
+                        navMenu.classList.toggle('space-y-4');
+                        navMenu.classList.toggle('flex-col');
+                    }
+                    
+                    // Toggle icon between bars and times
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                    
+                    // Update aria-expanded attribute
+                    this.setAttribute('aria-expanded', !isExpanded);
+                });
+            }
+            
+            // Close menu when clicking on a nav link
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const menuButton = document.querySelector('.md\:hidden button');
+                    const navMenu = document.querySelector('.md\:hidden + .md\:flex');
+                    const icon = menuButton?.querySelector('i');
+                    
+                    if (navMenu && !navMenu.classList.contains('hidden')) {
+                        navMenu.classList.add('hidden');
+                        navMenu.classList.remove('block');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                        menuButton?.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+            
+            // Simple FAQ accordion functionality
             const faqButtons = document.querySelectorAll('[data-mock="true"] button');
             faqButtons.forEach(button => {
                 button.addEventListener('click', function() {
@@ -862,8 +917,8 @@
             }
 
             // Smooth scrolling for navigation links
-            const navLinks = document.querySelectorAll('a[href^="#"]');
-            navLinks.forEach(link => {
+            const scrollLinks = document.querySelectorAll('a[href^="#"]');
+            scrollLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
@@ -875,7 +930,7 @@
                     }
                 });
             });
-        })();
+        });
     </script>
 </body>
 </html>
