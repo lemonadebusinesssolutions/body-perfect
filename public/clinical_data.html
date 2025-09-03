@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>Clinical Data | Body Perfect - Mounjaro (tirzepatide)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                borderRadius: {
+                    lg: "var(--radius)",
+                    md: "calc(var(--radius) - 2px)",
+                    sm: "calc(var(--radius) - 4px)",
+                },
+                colors: {
+                    background: "var(--background)",
+                    foreground: "var(--foreground)",
+                    primary: {
+                        DEFAULT: "var(--primary)",
+                        foreground: "var(--primary-foreground)"
+                    },
+                    secondary: {
+                        DEFAULT: "var(--secondary)",
+                        foreground: "var(--secondary-foreground)"
+                    },
+                    accent: {
+                        DEFAULT: "var(--accent)",
+                        foreground: "var(--accent-foreground)"
+                    },
+                    muted: {
+                        DEFAULT: "var(--muted)",
+                        foreground: "var(--muted-foreground)"
+                    }
+                },
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                },
+            }
+        }
+    }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --background: #ffffff;
+            --foreground: #111827;
+            --primary: #3b82f6;
+            --primary-foreground: #ffffff;
+            --secondary: #f3f4f6;
+            --secondary-foreground: #111827;
+            --accent: #4f46e5;
+            --accent-foreground: #ffffff;
+            --muted: #f9fafb;
+            --muted-foreground: #6b7280;
+            --radius: 0.5rem;
+            --border: #e5e7eb;
+            --card: #ffffff;
+            --card-foreground: #111827;
+            --input: #e5e7eb;
+            --ring: #3b82f6;
+        }
+        
+        .dark {
+            --background: #111827;
+            --foreground: #f9fafb;
+            --primary: #3b82f6;
+            --primary-foreground: #ffffff;
+            --secondary: #1f2937;
+            --secondary-foreground: #f9fafb;
+            --accent: #6366f1;
+            --accent-foreground: #ffffff;
+            --muted: #1f2937;
+            --muted-foreground: #9ca3af;
+            --border: #374151;
+            --card: #1f2937;
+            --card-foreground: #f9fafb;
+            --input: #374151;
+            --ring: #6366f1;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-background text-foreground overflow-x-hidden">
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border w-full">
+        <div class="w-full px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-xl font-bold text-primary">Body Perfect</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Home</a>
+                    <a href="/clinical_data.html" class="text-sm font-medium text-primary hover:text-primary/80 transition-colors">Clinical Data</a>
+                    <a href="#resources" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Resources</a>
+                    <a href="#contact" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Contact</a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-button" class="text-foreground hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-background border-t border-border">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/" class="block px-3 py-2 text-base font-medium text-foreground hover:bg-muted rounded-md">Home</a>
+                <a href="/clinical_data.html" class="block px-3 py-2 text-base font-medium text-primary bg-muted rounded-md">Clinical Data</a>
+                <a href="#resources" class="block px-3 py-2 text-base font-medium text-foreground hover:bg-muted rounded-md">Resources</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-foreground hover:bg-muted rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-6">Clinical Data & Research</h1>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto">Latest clinical trial results, real-world evidence, and comparative effectiveness data for informed decisions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clinical Trials Section -->
+    <section class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Clinical Trial Results</h2>
+                <p class="text-lg text-muted-foreground max-w-3xl mx-auto">Evidence-based data from key clinical studies demonstrating the efficacy and safety of Mounjaro (tirzepatide).</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Trial 1 -->
+                <div class="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200">
+                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-foreground mb-2">SURPASS-1 Trial</h3>
+                    <p class="text-muted-foreground mb-4">Phase 3 trial evaluating the efficacy and safety of tirzepatide monotherapy in patients with type 2 diabetes.</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span class="text-sm">Significant A1C reduction vs placebo</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-weight text-blue-500 mr-2"></i>
+                            <span class="text-sm">Notable weight loss observed</span>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-block mt-4 text-primary hover:underline text-sm font-medium">View Study Details →</a>
+                </div>
+
+                <!-- Trial 2 -->
+                <div class="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200">
+                    <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-secondary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-foreground mb-2">SURPASS-2 Trial</h3>
+                    <p class="text-muted-foreground mb-4">Head-to-head trial comparing tirzepatide with semaglutide in patients with type 2 diabetes.</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-trophy text-yellow-500 mr-2"></i>
+                            <span class="text-sm">Superior A1C reduction vs semaglutide</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-weight text-blue-500 mr-2"></i>
+                            <span class="text-sm">Greater weight loss achieved</span>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-block mt-4 text-primary hover:underline text-sm font-medium">View Study Details →</a>
+                </div>
+
+                <!-- Trial 3 -->
+                <div class="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200">
+                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-heartbeat text-accent text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-foreground mb-2">SURPASS-3 Trial</h3>
+                    <p class="text-muted-foreground mb-4">Trial assessing tirzepatide versus insulin degludec in insulin-naive patients with type 2 diabetes.</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-chart-pie text-purple-500 mr-2"></i>
+                            <span class="text-sm">Superior glycemic control</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-weight text-blue-500 mr-2"></i>
+                            <span class="text-sm">Significant weight reduction</span>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-block mt-4 text-primary hover:underline text-sm font-medium">View Study Details →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-World Evidence -->
+    <section class="py-20 bg-muted/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Real-World Evidence</h2>
+                <p class="text-lg text-muted-foreground max-w-3xl mx-auto">Insights from real-world clinical practice and patient outcomes.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="bg-card border border-border rounded-xl p-6 shadow-sm mb-8">
+                        <h3 class="text-2xl font-bold text-foreground mb-4">Effectiveness in Clinical Practice</h3>
+                        <p class="text-muted-foreground mb-6">Real-world data continues to support the clinical trial findings, with patients experiencing significant improvements in glycemic control and weight management.</p>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm font-medium text-foreground">A1C Reduction</span>
+                                    <span class="text-sm font-medium text-foreground">1.5-2.5%</span>
+                                </div>
+                                <div class="w-full bg-muted rounded-full h-2.5">
+                                    <div class="bg-primary h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm font-medium text-foreground">Weight Loss</span>
+                                    <span class="text-sm font-medium text-foreground">10-15%</span>
+                                </div>
+                                <div class="w-full bg-muted rounded-full h-2.5">
+                                    <div class="bg-secondary h-2.5 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-sm font-medium text-foreground">Treatment Satisfaction</span>
+                                    <span class="text-sm font-medium text-foreground">92%</span>
+                                </div>
+                                <div class="w-full bg-muted rounded-full h-2.5">
+                                    <div class="bg-accent h-2.5 rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-card border border-border rounded-xl p-6 shadow-sm">
+                    <h3 class="text-2xl font-bold text-foreground mb-4">Patient-Reported Outcomes</h3>
+                    <p class="text-muted-foreground mb-6">Patients report improvements in quality of life measures, including:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <i class="fas fa-check text-primary text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="text-foreground font-medium">Improved Energy Levels</h4>
+                                <p class="text-sm text-muted-foreground">Patients report increased daily energy and reduced fatigue.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <i class="fas fa-check text-primary text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="text-foreground font-medium">Better Blood Sugar Control</h4>
+                                <p class="text-sm text-muted-foreground">More stable glucose levels throughout the day.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <i class="fas fa-check text-primary text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="text-foreground font-medium">Reduced Hunger</h4>
+                                <p class="text-sm text-muted-foreground">Many patients experience decreased appetite and food cravings.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Profile -->
+    <section class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Safety Profile</h2>
+                <p class="text-lg text-muted-foreground max-w-3xl mx-auto">Understanding the safety considerations of Mounjaro (tirzepatide) therapy.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-card border border-border rounded-xl p-6 shadow-sm">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-exclamation-triangle text-red-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-foreground mb-2">Common Side Effects</h3>
+                    <ul class="space-y-2 text-muted-foreground">
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-xs mt-1.5 mr-2 text-primary"></i>
+                            <span>Nausea (12-18%)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-xs mt-1.5 mr-2 text-primary"></i>
+                            <span>Diarrhea (13-17%)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-xs mt-1.5 mr-2 text-primary"></i>
+                            <span>Decreased appetite (6-12%)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-xs mt-1.5 mr-2 text-primary"></i>
+                            <span>Vomiting (5-9%)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-card border border-border rounded-xl p-6 shadow-sm">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-info-circle text-yellow-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-foreground mb-2">Important Safety Information</h3>
+                    <ul class="space-y-2 text-muted-foreground">
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-xs mt-1.5 mr-2 text-primary"></i>
+                            <span>Not for use in patients with a personal or family history of medullary thyroid carcinoma</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-xs mt-1.5 mr-2 text-primary"></i>
+                            <span>Not for use in patients with Multiple Endocrine Neoplasia syndrome type 2</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-xs mt-1.5 mr-2 text-primary"></i>
+                            <span>Monitor for pancreatitis</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-card border border-border rounded-xl p-6 shadow-sm">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-user-md text-blue-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-foreground mb-2">Monitoring</h3>
+                    <ul class="space-y-2 text-muted-foreground">
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-xs mt-1.5 mr-2 text-primary"></i>
+                            <span>Monitor blood glucose prior to starting and during treatment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-xs mt-1.5 mr-2 text-primary"></i>
+                            <span>Monitor for signs of pancreatitis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chevron-right text-xs mt-1.5 mr-2 text-primary"></i>
+                            <span>Monitor for diabetic retinopathy in patients with a history of diabetic retinopathy</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-r from-primary/5 to-secondary/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-6">Access Full Clinical Resources</h2>
+            <p class="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">Healthcare professionals can access detailed clinical study reports, prescribing information, and additional resources.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                    <i class="fas fa-file-medical mr-2"></i> View Prescribing Information
+                </a>
+                <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                    <i class="fas fa-download mr-2"></i> Download Resources
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-foreground text-background py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold">Body Perfect</h3>
+                    <p class="text-sm text-gray-300">Professional healthcare information and resources for medical professionals.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-300 hover:text-white text-sm">Home</a></li>
+                        <li><a href="/clinical_data.html" class="text-gray-300 hover:text-white text-sm">Clinical Data</a></li>
+                        <li><a href="#resources" class="text-gray-300 hover:text-white text-sm">Resources</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white text-sm">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white text-sm">Prescribing Information</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white text-sm">Clinical Studies</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white text-sm">Patient Resources</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white text-sm">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Contact Us</h4>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-primary"></i>
+                            <span>123 Medical Drive, Suite 100<br>San Francisco, CA 94158</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2 text-primary"></i>
+                            <span>1-800-555-1234</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-primary"></i>
+                            <span>info@bodyperfect.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8">
+                <p class="text-center text-sm text-gray-400">&copy; 2023 Body Perfect. All rights reserved. Mounjaro is a registered trademark of Eli Lilly and Company.</p>
+                <div class="flex justify-center mt-4 space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <span class="text-gray-600">|</span>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Use</a>
+                    <span class="text-gray-600">|</span>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (menuButton && mobileMenu) {
+                menuButton.addEventListener('click', function() {
+                    const isExpanded = mobileMenu.classList.contains('hidden');
+                    
+                    if (isExpanded) {
+                        mobileMenu.classList.remove('hidden');
+                        mobileMenu.classList.add('block');
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('block');
+                    }
+                });
+            }
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInsideMenu = mobileMenu.contains(event.target);
+                const isClickOnMenuButton = menuButton.contains(event.target);
+                
+                if (!isClickInsideMenu && !isClickOnMenuButton) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('block');
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                            mobileMenu.classList.remove('block');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
