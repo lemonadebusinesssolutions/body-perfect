@@ -445,7 +445,7 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                 <!-- Resource Cards -->
-                <div class="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer group">
+                <a href="#" class="block bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 group">
                     <div class="flex items-center space-x-3 mb-4">
                         <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-200">
                             <i class="fas fa-file-medical text-primary text-xl"></i>
@@ -455,12 +455,12 @@
                     <p class="text-sm text-muted-foreground mb-4">
                         Comprehensive prescribing information, dosing guidelines, and clinical protocols for optimal patient care.
                     </p>
-                    <button class="text-primary text-sm font-semibold hover:underline">
-                        Download PDF <i class="fas fa-arrow-right ml-1"></i>
-                    </button>
-                </div>
+                    <div class="text-primary text-sm font-semibold group-hover:underline">
+                        Download PDF <i class="fas fa-arrow-right ml-1 transition-transform group-hover:translate-x-1"></i>
+                    </div>
+                </a>
 
-                <div class="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer group">
+                <a href="/patient_materials" class="block bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 group">
                     <div class="flex items-center space-x-3 mb-4">
                         <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center group-hover:bg-secondary/20 transition-colors duration-200">
                             <i class="fas fa-users text-secondary text-xl"></i>
@@ -470,12 +470,12 @@
                     <p class="text-sm text-muted-foreground mb-4">
                         Educational brochures, injection guides, and lifestyle resources to support patient understanding and adherence.
                     </p>
-                    <a href="/patient_materials" class="text-secondary text-sm font-semibold hover:underline">
-                        View Materials <i class="fas fa-arrow-right ml-1"></i>
-                    </a>
-                </div>
+                    <div class="text-secondary text-sm font-semibold group-hover:underline">
+                        View Materials <i class="fas fa-arrow-right ml-1 transition-transform group-hover:translate-x-1"></i>
+                    </div>
+                </a>
 
-                <div class="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer group">
+                <a href="/clinical_data" class="block bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 group">
                     <div class="flex items-center space-x-3 mb-4">
                         <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-200">
                             <i class="fas fa-chart-bar text-accent text-xl"></i>
@@ -485,11 +485,10 @@
                     <p class="text-sm text-muted-foreground mb-4">
                         Latest clinical trial results, real-world evidence, and comparative effectiveness data for informed decisions.
                     </p>
-                    <button onclick="location.href='/clinical_data'" class="text-accent text-sm font-semibold hover:underline">
-                        Access Data <i class="fas fa-arrow-right ml-1"></i>
-                    </button>
-                    
-                </div>
+                    <div class="text-accent text-sm font-semibold group-hover:underline">
+                        Access Data <i class="fas fa-arrow-right ml-1 transition-transform group-hover:translate-x-1"></i>
+                    </div>
+                </a>
 
                 <a href="/digital_tools" class="block bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 group">
                     <div class="flex items-center space-x-3 mb-4">
@@ -506,7 +505,7 @@
                     </div>
                 </a>
 
-                <div class="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer group">
+                <a href="#" class="block bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 group">
                     <div class="flex items-center space-x-3 mb-4">
                         <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center group-hover:bg-secondary/20 transition-colors duration-200">
                             <i class="fas fa-headset text-secondary text-xl"></i>
@@ -516,25 +515,11 @@
                     <p class="text-sm text-muted-foreground mb-4">
                         24/7 healthcare professional support line and patient assistance program information.
                     </p>
-                    <button class="text-secondary text-sm font-semibold hover:underline">
-                        Contact Support <i class="fas fa-arrow-right ml-1"></i>
-                    </button>
-                </div>
-
-                <div class="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer group">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-200">
-                            <i class="fas fa-mobile-alt text-accent text-xl"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-foreground">Digital Tools</h3>
+                    <div class="text-secondary text-sm font-semibold group-hover:underline">
+                        Contact Support <i class="fas fa-arrow-right ml-1 transition-transform group-hover:translate-x-1"></i>
                     </div>
-                    <p class="text-sm text-muted-foreground mb-4">
-                        Mobile apps and digital resources for patient monitoring and healthcare provider tools.
-                    </p>
-                    <button class="text-accent text-sm font-semibold hover:underline">
-                        Explore Tools <i class="fas fa-arrow-right ml-1"></i>
-                    </button>
-                </div>
+                </a>
+
             </div>
 
             <!-- Patient Support Section -->
