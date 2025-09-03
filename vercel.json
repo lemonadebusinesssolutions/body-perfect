@@ -5,19 +5,14 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist",
-        "includeFiles": ["public/**"]
+        "distDir": "dist"
       }
     }
   ],
   "routes": [
-    {
-      "src": "/images/(.*)",
-      "dest": "/images/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+    { "src": "/clinical_data", "dest": "/clinical_data.html" },
+    { "src": "/clinical_data.html", "status": 301, "headers": { "Location": "/clinical_data" } },
+    { "src": "/images/(.*)", "dest": "/images/$1" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
