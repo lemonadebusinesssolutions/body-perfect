@@ -18,36 +18,45 @@
                 colors: {
                     background: "var(--background)",
                     foreground: "var(--foreground)",
+                    card: {
+                        DEFAULT: "var(--card)",
+                        foreground: "var(--card-foreground)",
+                    },
                     primary: {
                         DEFAULT: "var(--primary)",
-                        foreground: "var(--primary-foreground)"
+                        foreground: "var(--primary-foreground)",
                     },
                     secondary: {
                         DEFAULT: "var(--secondary)",
-                        foreground: "var(--secondary-foreground)"
-                    },
-                    accent: {
-                        DEFAULT: "var(--accent)",
-                        foreground: "var(--accent-foreground)"
+                        foreground: "var(--secondary-foreground)",
                     },
                     muted: {
                         DEFAULT: "var(--muted)",
-                        foreground: "var(--muted-foreground)"
-                    }
+                        foreground: "var(--muted-foreground)",
+                    },
+                    accent: {
+                        DEFAULT: "var(--accent)",
+                        foreground: "var(--accent-foreground)",
+                    },
+                    border: "var(--border)",
+                    input: "var(--input)",
+                    ring: "var(--ring)",
                 },
                 fontFamily: {
                     sans: ['Inter', 'sans-serif'],
                 },
             }
         }
-    }
+    };
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --background: #ffffff;
             --foreground: #111827;
+            --card: #ffffff;
+            --card-foreground: #111827;
             --primary: #3b82f6;
             --primary-foreground: #ffffff;
             --secondary: #f3f4f6;
@@ -57,11 +66,16 @@
             --muted: #f9fafb;
             --muted-foreground: #6b7280;
             --radius: 0.5rem;
+            --border: #e5e7eb;
+            --input: #e5e7eb;
+            --ring: #3b82f6;
         }
         
         .dark {
             --background: #111827;
             --foreground: #f9fafb;
+            --card: #1f2937;
+            --card-foreground: #f9fafb;
             --primary: #3b82f6;
             --primary-foreground: #ffffff;
             --secondary: #1f2937;
@@ -70,6 +84,9 @@
             --accent-foreground: #ffffff;
             --muted: #1f2937;
             --muted-foreground: #9ca3af;
+            --border: #374151;
+            --input: #374151;
+            --ring: #6366f1;
         }
     </style>
 </head>
@@ -83,7 +100,7 @@
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="/" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Home</a>
-                    <a href="/clinical_data.html" class="text-sm font-medium text-primary hover:text-primary/80 transition-colors">Clinical Data</a>
+                    <a href="/clinical_data" class="text-sm font-medium text-primary hover:text-primary/80 transition-colors">Clinical Data</a>
                     <a href="#resources" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Resources</a>
                     <a href="#contact" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Contact</a>
                 </div>
@@ -98,6 +115,14 @@
         </div>
         <!-- Mobile menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-background border-t border-border">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/" class="block px-3 py-2 text-base font-medium text-foreground hover:bg-muted rounded-md">Home</a>
+                <a href="/clinical_data" class="block px-3 py-2 text-base font-medium text-primary bg-muted rounded-md">Clinical Data</a>
+                <a href="#resources" class="block px-3 py-2 text-base font-medium text-foreground hover:bg-muted rounded-md">Resources</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-foreground hover:bg-muted rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="/" class="block px-3 py-2 text-base font-medium text-foreground hover:bg-muted rounded-md">Home</a>
                 <a href="/clinical_data.html" class="block px-3 py-2 text-base font-medium text-primary bg-muted rounded-md">Clinical Data</a>
