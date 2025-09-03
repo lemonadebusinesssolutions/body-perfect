@@ -12,6 +12,8 @@
   "routes": [
     { "src": "/clinical_data", "dest": "/clinical_data.html" },
     { "src": "/clinical_data.html", "status": 301, "headers": { "Location": "/clinical_data" } },
+    { "src": "/patient_materials", "dest": "/patient_materials.html" },
+    { "src": "/patient_materials.html", "status": 301, "headers": { "Location": "/patient_materials" } },
     { "src": "/images/(.*)", "dest": "/images/$1" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
