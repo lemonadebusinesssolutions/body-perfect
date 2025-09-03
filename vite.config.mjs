@@ -16,7 +16,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        clinical_data: resolve(__dirname, 'public/clinical_data.html')
+        clinical_data: resolve(__dirname, 'public/clinical_data.html'),
+        patient_materials: resolve(__dirname, 'public/patient_materials.html')
       }
     }
   },
