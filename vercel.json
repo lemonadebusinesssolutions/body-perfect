@@ -14,6 +14,8 @@
     { "src": "/clinical_data.html", "status": 301, "headers": { "Location": "/clinical_data" } },
     { "src": "/patient_materials", "dest": "/patient_materials.html" },
     { "src": "/patient_materials.html", "status": 301, "headers": { "Location": "/patient_materials" } },
+    { "src": "/digital_tools", "dest": "/digital_tools.html" },
+    { "src": "/digital_tools.html", "status": 301, "headers": { "Location": "/digital_tools" } },
     { "src": "/images/(.*)", "dest": "/images/$1" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]

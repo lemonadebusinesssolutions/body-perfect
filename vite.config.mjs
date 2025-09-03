@@ -17,7 +17,8 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         clinical_data: resolve(__dirname, 'public/clinical_data.html'),
-        patient_materials: resolve(__dirname, 'public/patient_materials.html')
+        patient_materials: resolve(__dirname, 'public/patient_materials.html'),
+        digital_tools: resolve(__dirname, 'public/digital_tools.html')
       }
     }
   },

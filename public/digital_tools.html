@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>Digital Tools | Body Perfect - Mounjaro (tirzepatide)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    background: "#ffffff",
+                    foreground: "#111827",
+                    primary: "#3b82f6",
+                    secondary: "#f3f4f6",
+                    accent: "#4f46e5",
+                    muted: "#6b7280",
+                    border: "#e5e7eb"
+                }
+            }
+        }
+    };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="font-sans antialiased bg-background text-foreground overflow-x-hidden">
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-border w-full">
+        <div class="w-full px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 max-w-7xl mx-auto">
+                <div class="flex items-center min-w-0">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-primary whitespace-nowrap">Body Perfect</h1>
+                        <p class="text-xs text-muted whitespace-nowrap">Your Path to Wellness</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-foreground hover:text-primary transition-colors">Home</a>
+                    <a href="/clinical_data" class="text-foreground hover:text-primary transition-colors">Clinical Data</a>
+                    <a href="/patient_materials" class="text-foreground hover:text-primary transition-colors">Patient Materials</a>
+                    <a href="/digital_tools" class="text-primary font-medium">Digital Tools</a>
+                    <button class="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/90">
+                        Healthcare Login
+                    </button>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-foreground p-2 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="h-16 md:h-0"></div>
+    
+    <div class="w-full overflow-x-hidden">
+        <!-- Hero Section -->
+        <section class="pt-32 pb-20 bg-gradient-to-br from-primary/5 to-blue-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-6">Digital Tools</h1>
+                <p class="text-xl text-muted max-w-3xl mx-auto">Mobile apps and digital resources for patient monitoring and healthcare provider tools.</p>
+            </div>
+        </section>
+
+        <!-- Tools Grid -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Mobile App -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
+                        <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                            <i class="fas fa-mobile-alt text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-foreground mb-3 text-center">Patient Mobile App</h3>
+                        <p class="text-muted mb-6 text-center">Track your treatment progress, set medication reminders, and access educational resources on the go.</p>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="text-primary hover:underline">
+                                <i class="fab fa-apple mr-1"></i> App Store
+                            </a>
+                            <a href="#" class="text-primary hover:underline">
+                                <i class="fab fa-google-play mr-1"></i> Play Store
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Provider Portal -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
+                        <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                            <i class="fas fa-user-md text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-foreground mb-3 text-center">Provider Portal</h3>
+                        <p class="text-muted mb-6 text-center">Access patient records, treatment plans, and clinical resources in one secure platform.</p>
+                        <div class="text-center">
+                            <a href="#" class="inline-block bg-primary text-white px-6 py-2 rounded-md hover:bg-primary/90">
+                                Access Portal
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Health Tracker -->
+                    <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all">
+                        <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
+                            <i class="fas fa-heartbeat text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-foreground mb-3 text-center">Health Tracker</h3>
+                        <p class="text-muted mb-6 text-center">Monitor your health metrics, medication adherence, and treatment progress over time.</p>
+                        <div class="text-center">
+                            <a href="#" class="text-primary font-medium hover:underline">
+                                Learn More <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integration Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-foreground mb-4">Seamless Integration</h2>
+                    <p class="text-lg text-muted max-w-3xl mx-auto">Our digital tools integrate with popular health platforms and devices for a comprehensive health management experience.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-foreground mb-6">Connect Your Devices</h3>
+                        <p class="text-muted mb-6">Sync your favorite health and fitness devices to get a complete picture of your health journey.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Fitness trackers & smartwatches</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Blood glucose monitors</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Blood pressure cuffs</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Weight scales</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-bold text-foreground mb-6">Get Started</h3>
+                        <p class="text-muted mb-6">Download our mobile app or access the provider portal to start managing your health journey today.</p>
+                        <div class="space-y-4">
+                            <a href="#" class="block w-full text-center bg-primary text-white px-6 py-3 rounded-md hover:bg-primary/90 transition-colors">
+                                Download Mobile App
+                            </a>
+                            <a href="#" class="block w-full text-center border border-primary text-primary px-6 py-3 rounded-md hover:bg-primary/5 transition-colors">
+                                Access Provider Portal
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold text-foreground mb-6">Need Help?</h2>
+                <p class="text-lg text-muted max-w-3xl mx-auto mb-8">Our support team is available to help you with any questions about our digital tools.</p>
+                <a href="#contact" class="inline-block bg-primary text-white px-6 py-3 rounded-md hover:bg-primary/90">
+                    Contact Support
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.createElement('div');
+            mobileMenu.className = 'md:hidden hidden bg-white border-t border-gray-200 absolute left-0 right-0 z-40';
+            mobileMenu.innerHTML = `
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="/" class="block px-3 py-2 text-base font-medium text-foreground hover:bg-gray-100">Home</a>
+                    <a href="/clinical_data" class="block px-3 py-2 text-base font-medium text-foreground hover:bg-gray-100">Clinical Data</a>
+                    <a href="/patient_materials" class="block px-3 py-2 text-base font-medium text-foreground hover:bg-gray-100">Patient Materials</a>
+                    <a href="/digital_tools" class="block px-3 py-2 text-base font-medium text-primary bg-blue-50">Digital Tools</a>
+                    <div class="pt-2">
+                        <button class="w-full bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/90">
+                            Healthcare Login
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            menuButton.addEventListener('click', function() {
+                const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+                menuButton.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden', isExpanded);
+                
+                // Toggle icon between bars and times
+                const icon = menuButton.querySelector('i');
+                if (isExpanded) {
+                    icon.className = 'fas fa-bars text-xl';
+                } else {
+                    icon.className = 'fas fa-times text-xl';
+                }
+            });
+            
+            // Insert mobile menu after the header
+            document.querySelector('nav').parentNode.insertBefore(mobileMenu, document.querySelector('nav').nextSibling);
+        });
+    </script>
+</body>
+</html>
